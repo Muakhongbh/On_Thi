@@ -1,0 +1,20 @@
+﻿@model AppAPI.Models.SinhVien
+
+<h1>Chỉnh sửa Sinh Viên</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="HoTen" class="form-label">Họ Tên</label>
+        <input asp-for="HoTen" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Lop" class="form-label">Lớp</label>
+        <input asp-for="Lop" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Khoa" class="form-label">Khoa</label>
+        <input asp-for="Khoa" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>

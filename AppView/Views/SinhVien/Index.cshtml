@@ -1,0 +1,36 @@
+﻿@model List<AppAPI.Models.SinhVien>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Danh sách Sinh Viên</h1>
+        <a asp-action="Create" class="btn btn-primary mb-3">Thêm Sinh Viên</a>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ Tên</th>
+                    <th>Lớp</th>
+                    <th>Khoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sinhVien in Model)
+                {
+                    <tr>
+                        <td>@sinhVien.Id</td>
+                        <td>@sinhVien.HoTen</td>
+                        <td>@sinhVien.Lop</td>
+                        <td>@sinhVien.Khoa</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@sinhVien.Id" class="btn btn-warning btn-sm">Sửa</a>
+                        </td>
+                        <td>
+                            <form asp-action="DeleteSv" asp-route-id="@sinhVien.Id" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-outline-dark">Xóa</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
